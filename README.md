@@ -1,3 +1,10 @@
+## Changes made
+<li> comment out line 33 ``super(MetaEnv, self).__init__()`` in ``learn2learn/gym/envs/meta_env.py``.
+<li> add ``logs/`` to store results, ``meta_rl`` for scripts.
+<li> create MAML training scripts for ``HalfCheetahForwardBackward-v1``.
+
+--------------------------------------------------------------------------------
+
 <p align="center"><img src="https://raw.githubusercontent.com/learnables/learn2learn/gh-pages/assets/img/l2l-full.png" height="120px" /></p>
 
 --------------------------------------------------------------------------------
