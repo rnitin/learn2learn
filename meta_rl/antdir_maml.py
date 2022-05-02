@@ -1,5 +1,5 @@
 """
-HalfCheetah for MAML
+MAML for AntDirection
 """
 
 import random
@@ -103,8 +103,8 @@ def meta_surrogate_loss(iteration_replays, iteration_policies, policy, baseline,
     mean_loss /= len(iteration_replays)
     return mean_loss, mean_kl
 
-parser = argparse.ArgumentParser(description='HalfCheetah for MAML')
-parser.add_argument('--env_name', default="HalfCheetahForwardBackward-v1", help='environment name')
+parser = argparse.ArgumentParser(description='AntDirection MAML')
+parser.add_argument('--env_name', default="AntDirection-v1", help='environment name')
 parser.add_argument('--adapt_lr', type=float, default=0.1,help='adapt lr (default: 0.1)')
 parser.add_argument('--meta_lr', type=float, default=1.0, help='meta lr (default: 1.0)')
 parser.add_argument('--tau', type=float, default=1.0, help='tau (default: 1.0)')
@@ -136,7 +136,7 @@ def main():
     
     log_adapt_r = []
     time_start = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    with open("logs/args_half_cheetah_maml_" + time_start + ".txt", "w") as f:
+    with open("logs/args_antdir_maml_" + time_start + ".txt", "w") as f:
         json.dump(args.__dict__, f, indent=4)
 
     cuda = bool(cuda)
@@ -242,8 +242,8 @@ def main():
         # log results
         if iteration % log_int == 0:
             log_ar = np.array(log_adapt_r)
-            torch.save(policy.state_dict(), "logs/model_half_cheetah_maml_" + time_start + ".pt")
-            np.save("logs/log_half_cheetah_maml_" + time_start, log_ar)
+            torch.save(policy.state_dict(), "logs/model_antdir_maml_" + time_start + ".pt")
+            np.save("logs/log_antdir_maml_" + time_start, log_ar)
 
 if __name__ == '__main__':
     main()
