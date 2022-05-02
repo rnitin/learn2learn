@@ -135,7 +135,7 @@ def main():
     log_int = args.log_int
     
     log_adapt_r = []
-    time_start = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+    time_start = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     with open("logs/args_half_cheetah_maml" + time_start + ".txt", "w") as f:
         json.dump(args.__dict__, f, indent=4)
 
