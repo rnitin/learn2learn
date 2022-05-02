@@ -178,10 +178,14 @@ def main():
 
             # Fast Adapt
             for step in range(adapt_steps):
+                if step == 0:
+                    adapt_lr_new = adapt_lr
+                else:
+                    adapt_lr_new = adapt_lr/2
                 train_episodes = task.run(clone, episodes=adapt_bsz)
                 if cuda:
                     train_episodes = train_episodes.to(device, non_blocking=True)
-                clone = fast_adapt_a2c(clone, train_episodes, adapt_lr,
+                clone = fast_adapt_a2c(clone, train_episodes, adapt_lr_new,
                                        baseline, gamma, tau, first_order=True)
                 task_replay.append(train_episodes)
 
