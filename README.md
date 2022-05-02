@@ -2,6 +2,7 @@
 - comment out line 33 ``super(MetaEnv, self).__init__()`` in ``learn2learn/gym/envs/meta_env.py``.
 - add ``logs/`` to store results, ``meta_rl`` for scripts.
 - create MAML training scripts for ``HalfCheetahForwardBackward-v1``.
+
 Run ``pip install -e .`` before use.
 
 --------------------------------------------------------------------------------
