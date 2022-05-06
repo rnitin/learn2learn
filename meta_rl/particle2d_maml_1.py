@@ -106,7 +106,7 @@ def meta_surrogate_loss(iteration_replays, iteration_policies, policy, baseline,
 
 
 parser = argparse.ArgumentParser(description='Particle2D MAML')
-parser.add_argument('--env_name', default="Particle2D-v1", help='environment name')
+parser.add_argument('--env_name', default="Particles2D-v1", help='environment name')
 parser.add_argument('--adapt_lr', type=float, default=0.1, help='adapt lr (default: 0.1)')
 parser.add_argument('--meta_lr', type=float, default=1.0, help='meta lr (default: 1.0)')
 parser.add_argument('--tau', type=float, default=1.0, help='tau (default: 1.0)')
