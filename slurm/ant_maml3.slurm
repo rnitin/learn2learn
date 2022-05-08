@@ -7,7 +7,7 @@
 #SBATCH --ntasks=8                                             
 #SBATCH --ntasks-per-node=8                                    
 #SBATCH --mem=10G                                             
-#SBATCH --output=logs/antDirMAML3.%j 
+#SBATCH --output=$SCRATCH/code/logs/antDirMAML3.%j 
 
 ## Job commands
 cd $SCRATCH/code/learn2learn/

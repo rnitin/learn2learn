@@ -7,7 +7,7 @@
 #SBATCH --ntasks=3                                             
 #SBATCH --ntasks-per-node=8                                    
 #SBATCH --mem=10G                                             
-#SBATCH --output=logs/particles2dMAML3.%j 
+#SBATCH --output=$SCRATCH/code/logs/particles2dMAML3.%j 
 
 ## Job commands
 cd $SCRATCH/code/learn2learn/
